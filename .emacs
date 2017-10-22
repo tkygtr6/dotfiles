@@ -1,6 +1,5 @@
 (define-key global-map [?¥] [?\\])
 (keyboard-translate ?\C-h ?\C-?)
-(setq make-backup-files nil)
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -15,4 +14,5 @@
 (setq scroll-margin 5)
 (setq scroll-preserve-screen-position t)
 (setq next-screen-context-lines 5)
-(setq create-lockfiles nil)
+(setq make-backup-files nil)
+(setq auto-save-default nil)

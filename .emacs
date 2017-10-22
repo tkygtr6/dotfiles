@@ -29,4 +29,5 @@
  '(scroll-margin 3)
  )
 
-
+;; シンボリックリンクを開く時に確認しない設定
+(setq vc-follow-symlinks t)

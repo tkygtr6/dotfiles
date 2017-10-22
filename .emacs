@@ -11,5 +11,8 @@
     (set-foreground-color "LightGray")
     (set-cursor-color "Gray")
     (set-frame-parameter nil 'alpha 80) ;透明度
-    ))
-(setq x-select-enable-clipboard t)
+))
+(setq scroll-margin 5)
+(setq scroll-preserve-screen-position t)
+(setq next-screen-context-lines 5)
+(setq create-lockfiles nil)

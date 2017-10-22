@@ -19,6 +19,9 @@ linux*)
 esac
 
 alias l='ls'
+alias grep="grep --color=auto"
+alias cp="cp -i"
+alias mv="mv -i"
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 alias mysql='mysql -u root -p'
 alias du='du -h'

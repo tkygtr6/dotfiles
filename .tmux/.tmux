@@ -1,0 +1,1 @@
+/Users/Takuya/dotfiles/.tmux

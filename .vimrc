@@ -138,6 +138,8 @@ set fileencodings=utf-8
 set bomb
 set binary
 set ttyfast
+set lazyredraw
+syntax sync minlines=256
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -624,10 +626,10 @@ endif
 if executable("clang++")
   let g:syntastic_cpp_compiler = 'clang++'
   let g:syntastic_cpp_compiler_options = '--std=c++11 --stdlib=libc++'
-    let g:quickrun_config = {}
-      let g:quickrun_config['cpp/clang++11'] = {
+  let g:quickrun_config = {}
+  let g:quickrun_config['cpp/clang++11'] = {
             \ 'cmdopt': '--std=c++11 --stdlib=libc++',
             \ 'type': 'cpp/clang++'
           \ }
-        let g:quickrun_config['cpp'] = {'type': 'cpp/clang++11'}
-    endif
+  let g:quickrun_config['cpp'] = {'type': 'cpp/clang++11'}
+endif

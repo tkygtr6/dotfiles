@@ -35,8 +35,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 " Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
@@ -51,6 +51,7 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'Shougo/neocomplcache'
 " Plug 'Shougo/neosnippet'
 " Plug 'Shougo/neosnippet-snippets'
+Plug 'sjl/badwolf'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -185,9 +186,10 @@ set ruler
 set number
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  colorscheme molokai
-endif
+set background=dark
+"colorscheme molokai
+"colorscheme darkblue
+colorscheme badwolf
 
 set mousemodel=popup
 set t_Co=256

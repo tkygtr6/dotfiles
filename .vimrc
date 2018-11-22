@@ -633,3 +633,5 @@ if executable("clang++")
           \ }
   let g:quickrun_config['cpp'] = {'type': 'cpp/clang++11'}
 endif
+
+set tags=./tags;

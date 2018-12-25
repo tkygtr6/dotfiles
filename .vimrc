@@ -52,6 +52,7 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'Shougo/neosnippet'
 " Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/badwolf'
+Plug 'lervag/vimtex'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -635,3 +636,10 @@ if executable("clang++")
 endif
 
 set tags=./tags;
+
+"Fortran configuration
+let fortran_free_source=1
+let fortran_fold=1
+au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
+
+let g:polyglot_disabled = ['latex']

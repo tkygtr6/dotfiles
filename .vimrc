@@ -31,8 +31,8 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'scrooloose/nerdtree'
+"Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-fugitive'
 "Plug 'vim-airline/vim-airline'
@@ -53,6 +53,8 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/badwolf'
 Plug 'lervag/vimtex'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -643,3 +645,6 @@ let fortran_fold=1
 au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
 
 let g:polyglot_disabled = ['latex']
+
+let g:vimfiler_as_default_explorer = 1
+

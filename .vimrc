@@ -98,7 +98,7 @@ let mapleader=','
 set hidden
 
 "" Searching
-"set hlsearch
+set hlsearch
 set incsearch
 set ignorecase
 set smartcase
@@ -231,6 +231,8 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+
+inoremap jj <Esc>
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
@@ -479,3 +481,6 @@ nmap <C-w>- :<C-u>split<CR>
 nmap <C-w>L :vertical resize +7<CR>  
 nmap <C-w>H :vertical resize -7<CR>  
 
+" spell check
+set spell
+set spelllang=en,cjk "exclude Japanese

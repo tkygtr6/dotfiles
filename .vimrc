@@ -433,26 +433,23 @@ let g:polyglot_disabled = ['latex']
 
 " VimFiler
 let g:vimfiler_as_default_explorer = 1 " replace netrw
-"let g:vimfiler_safe_mode_by_default = 0 " Enable file operation commands.
-" Like Textmate icons.
+autocmd FileType vimfiler nmap <buffer> l <Plug>(vimfiler_expand_tree)
+autocmd FileType vimfiler nmap <buffer> h <Plug>(vimfiler_unexpand_tree)
 let g:vimfiler_tree_leaf_icon = ' '
-if has('gui_running')
-    let g:vimfiler_tree_opened_icon = '▾'
-    let g:vimfiler_tree_closed_icon = '▸'
-else
-    let g:vimfiler_tree_opened_icon = 'V'
-    let g:vimfiler_tree_closed_icon = '>'
-endif
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
-" Windows only and require latest vimproc.
-let g:unite_kind_file_use_trashbox = 1 " Use trashbox.
 
-" [Space]x : Open the VimFiler with explorer-like style.
-nnoremap <silent> [Space]x
+" window operation
+nmap <C-w><Bar> :<C-u>vsplit<CR>
+nmap <C-w>- :<C-u>split<CR>
+nmap <C-w>L :vertical resize +10<CR>  
+nmap <C-w>H :vertical resize -10<CR>  
+
+" Open the VimFiler with explorer-like style.
+nnoremap <F2>
 \ :VimFilerSimple -buffer-name=explorer -toggle -no-quit<CR>
 \ :vertical resize 25<CR>
-\ :setlocal winfixwidth<CR>
+\ :etlocal winfixwidth<CR>
 \ :setlocal nonumber<CR>
 
 let g:vimfiler_force_overwrite_statusline = 0
@@ -464,6 +461,7 @@ let g:netrw_liststyle = 3
 " nerdcommenter mapping
 map <C-t> <Leader>c<Space> 
 
+" vim-markdown
 autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
 let g:vim_markdown_folding_disabled = 1

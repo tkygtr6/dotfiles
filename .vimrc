@@ -424,7 +424,7 @@ endif
 
 set tags=./tags;
 
-"Fortran configuration
+" Fortran configuration
 let fortran_free_source=1
 let fortran_fold=1
 au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
@@ -439,18 +439,20 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 
-" window operation
-nmap <C-w><Bar> :<C-u>vsplit<CR>
-nmap <C-w>- :<C-u>split<CR>
-nmap <C-w>L :vertical resize +10<CR>  
-nmap <C-w>H :vertical resize -10<CR>  
-
 " Open the VimFiler with explorer-like style.
+nnoremap <F1>
+\ :VimFilerSimple -buffer-name=explorer -toggle -no-quit<CR>
+\ :vertical resize 25<CR>
+\ :etlocal winfixwidth<CR>
+\ :setlocal nonumber<CR>
 nnoremap <F2>
 \ :VimFilerSimple -buffer-name=explorer -toggle -no-quit<CR>
 \ :vertical resize 25<CR>
 \ :etlocal winfixwidth<CR>
 \ :setlocal nonumber<CR>
+
+autocmd FileType vimfiler nmap <buffer> <F1> :<C-u>q<CR>
+autocmd FileType vimfiler nmap <buffer> <F2> :<C-u>q<CR>
 
 let g:vimfiler_force_overwrite_statusline = 0
 
@@ -468,3 +470,10 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 1
 let g:vim_markdown_conceal = 0
+
+" window operation
+nmap <C-w><Bar> :<C-u>vsplit<CR>
+nmap <C-w>- :<C-u>split<CR>
+nmap <C-w>L :vertical resize +7<CR>  
+nmap <C-w>H :vertical resize -7<CR>  
+

@@ -3,14 +3,10 @@
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
-if has('vim_starting')
-  set nocompatible               " Be iMproved
-endif
-
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
 let g:vim_bootstrap_langs = "html,javascript,python,ruby"
-let g:vim_bootstrap_editor = "vim"				" nvim or vim
+let g:vim_bootstrap_editor = "vim"  
 
 if !filereadable(vimplug_exists)
   if !executable("curl")
@@ -31,60 +27,22 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-"Plug 'scrooloose/nerdtree'
-"Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-fugitive'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-" Plug 'vim-scripts/grep.vim'
-Plug 'vim-scripts/CSApprox'
-" Plug 'bronson/vim-trailing-whitespace'
-Plug 'Raimondi/delimitMate'
+Plug 'airblade/vim-gitgutter' "git diff
+Plug 'vim-scripts/CSApprox' "256 color
+Plug 'Raimondi/delimitMate' "automatically close ( and '
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
-" Plug 'tpope/vim-surround'
-" Plug 'Shougo/neocomplcache'
-" Plug 'Shougo/neosnippet'
-" Plug 'Shougo/neosnippet-snippets'
-Plug 'sjl/badwolf'
 Plug 'lervag/vimtex'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler'
-
-if isdirectory('/usr/local/opt/fzf')
-  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-else
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-  Plug 'junegunn/fzf.vim'
-endif
-let g:make = 'gmake'
-if exists('make')
-        let g:make = 'make'
-endif
-Plug 'Shougo/vimproc.vim', {'do': g:make}
-
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-
-if v:version >= 703
-  Plug 'Shougo/vimshell.vim'
-endif
-
-if v:version >= 704
-  "" Snippets
-  Plug 'SirVer/ultisnips'
-endif
-
-Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdcommenter'
 
 "" Color
 Plug 'tomasr/molokai'
+Plug 'sjl/badwolf'
 
 "*****************************************************************************
 "" Custom bundles
@@ -120,7 +78,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 "*****************************************************************************
 "*****************************************************************************
 
-"" Include user's extra bundle
+" Include user's extra bundle
 if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
@@ -646,5 +604,38 @@ au! BufRead,BufNewFile *.f90 let b:fortran_do_enddo=1
 
 let g:polyglot_disabled = ['latex']
 
-let g:vimfiler_as_default_explorer = 1
+" VimFiler "{{{
+let g:vimfiler_as_default_explorer = 1 " replace netrw
+"let g:vimfiler_safe_mode_by_default = 0 " Enable file operation commands.
+" Like Textmate icons.
+let g:vimfiler_tree_leaf_icon = ' '
+if has('gui_running')
+    let g:vimfiler_tree_opened_icon = '▾'
+    let g:vimfiler_tree_closed_icon = '▸'
+else
+    let g:vimfiler_tree_opened_icon = 'V'
+    let g:vimfiler_tree_closed_icon = '>'
+endif
+let g:vimfiler_file_icon = '-'
+let g:vimfiler_marked_file_icon = '*'
+" Windows only and require latest vimproc.
+let g:unite_kind_file_use_trashbox = 1 " Use trashbox.
 
+" [Space]x : Open the VimFiler with explorer-like style.
+nnoremap <silent> [Space]x
+\ :VimFilerSimple -buffer-name=explorer -toggle -no-quit<CR>
+\ :vertical resize 25<CR>
+\ :setlocal winfixwidth<CR>
+\ :setlocal nonumber<CR>
+
+let g:vimfiler_force_overwrite_statusline = 0
+
+"}}}
+
+" tree view (for netrw) "{{{
+" but netrw is replaced by VimFiler
+let g:netrw_liststyle = 3
+
+"}}}
+
+map <C-t> <Leader>c<Space> 

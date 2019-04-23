@@ -124,9 +124,9 @@ set number
 
 let no_buffers_menu=1
 set background=dark
-colorscheme molokai
+"colorscheme molokai
 "colorscheme darkblue
-"colorscheme badwolf
+colorscheme badwolf
 
 set mousemodel=popup
 set t_Co=256

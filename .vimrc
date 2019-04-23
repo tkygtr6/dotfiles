@@ -124,9 +124,9 @@ set number
 
 let no_buffers_menu=1
 set background=dark
-"colorscheme molokai
+colorscheme molokai
 "colorscheme darkblue
-colorscheme badwolf
+"colorscheme badwolf
 
 set mousemodel=popup
 set t_Co=256
@@ -470,6 +470,7 @@ map <C-t> <Leader>c<Space>
 " vim-markdown
 autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
+autocmd FileType markdown set paste
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 1

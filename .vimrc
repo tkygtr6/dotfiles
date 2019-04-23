@@ -32,7 +32,6 @@ Plug 'vim-scripts/CSApprox' "256 color
 Plug 'Raimondi/delimitMate' "automatically close ( and '
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
@@ -442,6 +441,8 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
+let g:vimfiler_safe_mode_by_default = 0 " Enable file operation commands.
+let g:unite_kind_file_use_trashbox = 1 " Use trashbox." "Use trashbox
 
 " Open the VimFiler with explorer-like style.
 nnoremap <F1>

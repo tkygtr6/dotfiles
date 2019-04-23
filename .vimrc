@@ -39,6 +39,8 @@ Plug 'lervag/vimtex'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler'
 Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 "" Color
 Plug 'tomasr/molokai'
@@ -461,3 +463,10 @@ let g:netrw_liststyle = 3
 
 " nerdcommenter mapping
 map <C-t> <Leader>c<Space> 
+
+autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
+autocmd BufRead,BufNewFile *.md  set filetype=markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 1
+let g:vim_markdown_conceal = 0

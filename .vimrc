@@ -435,7 +435,7 @@ let g:polyglot_disabled = ['latex']
 
 " VimFiler
 let g:vimfiler_as_default_explorer = 1 " replace netrw
-autocmd FileType vimfiler nmap <buffer> l <Plug>(vimfiler_expand_tree)
+autocmd FileType vimfiler nmap <buffer> l <Plug>(vimfiler_expand_or_edit)
 autocmd FileType vimfiler nmap <buffer> h <Plug>(vimfiler_unexpand_tree)
 let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'

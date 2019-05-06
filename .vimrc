@@ -233,6 +233,21 @@ set autoread
 
 inoremap jj <Esc>
 
+" Japanese
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
+
+" switch IME off when inserting mode is finished
+set imdisable
+
+nnoremap j gj
+nnoremap k gk
+inoremap <C-t> <Esc>
+
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
@@ -282,6 +297,11 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ 'mode': 'active',
+    \ 'passive_filetypes': ['latex', 'tex', 'markdown']
+    \}
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -466,7 +486,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:netrw_liststyle = 3
 
 " nerdcommenter mapping
-map <C-t> <Leader>c<Space> 
+map <C-_> <Leader>c<Space> 
 
 " vim-markdown
 autocmd BufRead,BufNewFile *.mkd  set filetype=markdown

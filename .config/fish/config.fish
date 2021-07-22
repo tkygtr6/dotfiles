@@ -77,3 +77,12 @@ function ghistory
     end
 end
 
+function git-co-without-changes
+    if test (count $argv) -lt 2
+        git symbolic-ref HEAD refs/heads/$argv[1]
+    else
+        echo "git-co-without-changes [branch]" 1>&2
+        return 1
+    end
+end
+

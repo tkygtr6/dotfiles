@@ -55,7 +55,7 @@ function gvim
       echo "gvim [keyword]" 1>&2
       return 1
 	end
-    vim ( grep -r $argv[1] . | peco --query $argv[1] | awk -F: '{print $1}' )
+    vim ( grep -r $argv[1] . | peco --query "$argv[1] " | awk -F: '{print $1}' )
 end
 
 function gopen
@@ -63,14 +63,14 @@ function gopen
       echo "gvim [keyword]" 1>&2
       return 1
 	end
-    vim ( grep -r $argv[1] . | peco --query $argv[1] | awk -F: '{print $1}' )
+    vim ( grep -r $argv[1] . | peco --query "$argv[1] " | awk -F: '{print $1}' )
 end
 
 function ghistory
 	if test (count $argv) -lt 1;
 	    eval ( history | tail -r | peco )
     else if test (count $argv) -lt 2
-        eval ( history | tail -r | grep $argv[1] |  peco --query $argv[1] )
+        eval ( history | tail -r | grep $argv[1] |  peco --query "$argv[1] " )
     else
         echo "ghistory [keyword]" 1>&2
         return 1

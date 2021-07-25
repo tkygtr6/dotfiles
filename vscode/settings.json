@@ -28,7 +28,6 @@
         "jupyter-notebook": "left"
     },
     "bracketPairColorizer.showHorizontalScopeLine": false,
-    "workbench.editor.enablePreview": false,
     "vim.useSystemClipboard": false,
     "window.zoomLevel": -1,
     "ruby.rubocop.useBundler": true,

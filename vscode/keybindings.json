@@ -12,13 +12,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
 
-    // Move from global search bar to editor
-    {
-        "key": "ctrl+[",
-        "command": "workbench.action.focusFirstEditorGroup",
-        "when": "searchInputBoxFocus"
-    },
-
     // Move from global search box to search result
     {
         "key": "ctrl+n",
@@ -36,6 +29,11 @@
         "command": "workbench.action.focusFirstEditorGroup",
         "when": "!editorFocus"
     },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!editorFocus"
+    },
 
     // Switch between various kinds of sidebars (a little bit dirty code)
     {
@@ -46,7 +44,7 @@
     {
         "key": "ctrl+w k",
         "command": "workbench.view.explorer",
-        "when": "inSearchEditor || inputBoxFocus"
+        "when": "inSearchEditor || searchViewletFocus"
     },
 
     // Reindent

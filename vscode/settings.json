@@ -1,0 +1,36 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+    "files.insertFinalNewline": true,
+    "workbench.startupEditor": "none",
+    "editor.wordWrap": "on",
+    "git.ignoreLegacyWarning": true,
+    "markdown.marp.enableHtml": true,
+    "markdown.marp.themes": [
+        "./theme.css"
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        }
+    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "docker.showStartPage": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "bracketPairColorizer.showHorizontalScopeLine": false,
+    "workbench.editor.enablePreview": false,
+    "vim.useSystemClipboard": false,
+    "window.zoomLevel": -1,
+    "ruby.rubocop.useBundler": true,
+    "ruby.rubocop.onSave": false,
+}

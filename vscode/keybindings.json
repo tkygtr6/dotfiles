@@ -1,0 +1,94 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    // Comment in/out
+    {
+        "key": "ctrl+/",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+/",
+        "command": "-editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // Move from global search bar to editor
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "searchInputBoxFocus"
+    },
+
+    // Move from global search box to search result
+    {
+        "key": "ctrl+n",
+        "command": "search.focus.nextInputBox",
+        "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+    },
+
+    // Switch focus between sidebar and editor
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.switchWindow"
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!editorFocus"
+    },
+
+    // Switch between various kinds of sidebars (a little bit dirty code)
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.findInFiles",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.view.explorer",
+        "when": "inSearchEditor || inputBoxFocus"
+    },
+
+    // Reindent
+    {
+        "key": "=",
+        "command": "editor.action.reindentselectedlines",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+    },
+
+    // Fold/unfold
+    {
+        "key": "shift+cmd+,",
+        "command": "-editor.action.inPlaceReplace.up",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+,",
+        "command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "shift+cmd+.",
+        "command": "-breadcrumbs.toggleToOn",
+        "when": "!config.breadcrumbs.enabled"
+    },
+    {
+        "key": "shift+cmd+.",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+
+    // Change Resize side bar
+    // (WIP: it only works when the side bar is focused on)
+    {
+        "key": "ctrl+w shift+L",
+        "command": "workbench.action.increaseViewSize",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+w shift+H",
+        "command": "workbench.action.decreaseViewSize",
+        "when": "!editorFocus"
+    },
+
+]

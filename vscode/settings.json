@@ -29,7 +29,27 @@
     },
     "bracketPairColorizer.showHorizontalScopeLine": false,
     "vim.useSystemClipboard": false,
-    "window.zoomLevel": -1,
     "ruby.rubocop.useBundler": true,
     "ruby.rubocop.onSave": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-[>"
+            ],
+            "commands": [
+                ":nohl"
+            ],
+        },
+        {
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ],
+        }
+    ]
 }
+

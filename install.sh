@@ -24,6 +24,7 @@ for file in $(ls -a .config | grep "[^\.]"); do
     echo "create ~/.config/$file ? [y]"
     read ans
     case $ans in "yes" | "YES" | "y" | "Y" )
+        mkdir -p ~/.config
         ln -si ~/dotfiles/.config/$file ~/.config/$file
         if [ $? = 0 ]; then
             echo "~/.config/$file created"

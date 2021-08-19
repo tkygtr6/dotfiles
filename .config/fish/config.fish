@@ -47,7 +47,7 @@ end
 
 function fish_right_prompt
   set_color normal
-  printf '[%s]' (date "+%m/%y %H:%M:%S")
+  printf '[%s %s]' (hostname) (date "+%m/%y %H:%M:%S")
 end
 
 function gvim

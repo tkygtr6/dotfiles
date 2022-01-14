@@ -86,3 +86,6 @@ function git-co-without-changes
     end
 end
 
+function code-remote
+    code --folder-uri "vscode-remote://ssh-remote+$argv[1]$argv[2]"
+end
